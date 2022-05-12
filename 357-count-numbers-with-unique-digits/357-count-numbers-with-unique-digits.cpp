@@ -11,8 +11,6 @@ public:
             int val_2 = 1;
             for(int j=0;j<i-1;j++){
                 val_1 = val_1 * (10 - j - 1);
-            }
-            for(int j=0;j<i-1;j++){
                 val_2 = val_2 * (10 - j - 1);
             }
             arr[i] = arr[i-1] + val_1 + val_2;
