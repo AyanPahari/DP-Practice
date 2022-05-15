@@ -24,6 +24,6 @@ public:
                 else t[i][j] = t[i-1][j];
             }
         }
-        return t[n][amount] >= INT_MAX - 1 ? -1 : t[n][amount];
+        return t[n][amount] > amount ? -1 : t[n][amount];
     }
 };
