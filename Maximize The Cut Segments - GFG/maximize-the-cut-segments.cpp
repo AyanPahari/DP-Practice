@@ -15,7 +15,7 @@ class Solution
     
     int solve(int idx, int arr[], int n){
         if(n == 0) return 0;
-        if(idx == 0) return -1000000;
+        if(idx == 0) return INT_MIN;
         if(t[n][idx]!=-1) return t[n][idx];
         
         if(arr[idx-1]<=n){
