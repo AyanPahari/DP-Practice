@@ -8,8 +8,8 @@ public:
         int size = arr.size();
         int t[size+1][n+1];
         
-        for(int i=0;i<size+1;i++) t[i][0] = 0;
         for(int i=0;i<n+1;i++) t[0][i] = INT_MAX-1;
+        for(int i=0;i<size+1;i++) t[i][0] = 0;
             
         for(int i=1;i<size+1;i++){
             for(int j=1;j<n+1;j++){
