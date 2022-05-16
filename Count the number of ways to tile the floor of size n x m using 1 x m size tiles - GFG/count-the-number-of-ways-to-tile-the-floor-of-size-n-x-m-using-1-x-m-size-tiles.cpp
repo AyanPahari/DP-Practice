@@ -14,10 +14,7 @@ class Solution{
 	    if(n < m) return 1;
 	    if(n == m) return 2;
 	    if(dp[n]!=-1) return dp[n];
-	    else if(n > m){
-	        dp[n] = (solve(n-1,m) % mod + solve(n-m,m) % mod) % mod;
-	    }
-	   return dp[n];
+	    return dp[n] = (solve(n-1,m) % mod + solve(n-m,m) % mod) % mod;
 	}
 	
 	int countWays(int n, int m){
