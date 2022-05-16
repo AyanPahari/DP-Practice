@@ -17,22 +17,6 @@ class Solution{
 	    else if(n > m){
 	        dp[n] = (solve(n-1,m) % mod + solve(n-m,m) % mod) % mod;
 	    }
-	   //if(n > m){
-	   //    for(int i=3;i<=n;i++){
-	   //        if(i-1 == m && i - m < m){
-	   //            dp[i] = 3;
-	   //        }
-	   //        else if(i-1 > m && i - m < m){
-	   //            dp[i] = dp[i - 1] + 1;
-	   //        }
-	   //        else if(i-1 > m && i - m >= m){
-	   //            dp[i] = dp[i - 1] + 2;
-	   //        }
-	   //        else{
-	   //            dp[i] = 2 + dp[i - m];
-	   //        }
-	   //    }
-	   //}
 	   return dp[n];
 	}
 	
