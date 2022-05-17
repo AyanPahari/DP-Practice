@@ -3,10 +3,12 @@ public:
     
     void solve(int ind, vector<int>candidates, int target, vector<vector<int>>& res, vector<int>output, int n, int sum){
         if(sum>target) return;
-        if(ind == n){
-            if(sum == target) res.push_back(output);
+        if(sum == target){
+            res.push_back(output);
             return;
         }
+        if(ind == n) return;
+        
         output.push_back(candidates[ind]);
         sum += candidates[ind];
         
