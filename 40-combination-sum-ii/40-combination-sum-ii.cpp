@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    void solve(int ind, vector<int>candidates, int target, vector<vector<int>>& res, vector<int>output, int n){
+    void solve(int ind, vector<int>&candidates, int target, vector<vector<int>>& res, vector<int>&output, int n){
         if(target == 0){
             res.push_back(output);
             return;
