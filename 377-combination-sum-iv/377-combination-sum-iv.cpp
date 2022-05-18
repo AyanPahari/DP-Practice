@@ -1,19 +1,19 @@
 class Solution {
 public:
+    int dp[1001];
     
-    int t[201][1001];
-    
-    int solve(vector<int>arr, int sum, int n){
+    int solve(vector<int>arr, int sum){
         if(sum == 0) return 1;
-        if(n == 0) return 0;
-        if(t[n][sum]!=-1) return t[n][sum];
-        
-        if(arr[n-1] <= sum) return t[n][sum] = solve(arr, sum - arr[n-1], arr.size()) + solve(arr, sum, n-1);
-        else return t[n][sum] = solve(arr, sum, n-1);
+        if(dp[sum]!=-1) return dp[sum];
+        int ans = 0;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i] <= sum) ans += solve(arr, sum - arr[i]);
+        }
+        return dp[sum] = ans;
     }
     
     int combinationSum4(vector<int>& nums, int target) {
-        memset(t,-1,sizeof(t));
-        return solve(nums, target, nums.size());
+        memset(dp,-1,sizeof(dp));
+        return solve(nums, target);
     }
 };
