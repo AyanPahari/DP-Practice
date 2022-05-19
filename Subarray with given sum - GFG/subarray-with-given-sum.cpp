@@ -19,9 +19,9 @@ class Solution
             while(sum > s) sum -= arr[start++];
             if(sum == s){
                 flag = true;
+                end = i;
                 break;
             }
-            if(sum < s) end++;
         }
         if(flag) return {start + 1, end + 1};
         else return {-1};
