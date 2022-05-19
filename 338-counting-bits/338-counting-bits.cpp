@@ -11,7 +11,7 @@ public:
         for(int i=2;i<=n;i++){
             if(checkpow2(i)){
                 last_pow = i;
-                dp[i] = 1 + dp[i - i];
+                dp[i] = 1 + dp[0];
             }
             else dp[i] = 1 + dp[i - last_pow];
         }
