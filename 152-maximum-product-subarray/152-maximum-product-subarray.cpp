@@ -9,11 +9,10 @@ public:
             dp[i].second = min(nums[i], min(dp[i - 1].first * nums[i], dp[i - 1].second * nums[i]));
         }
         
+        // dp[i].first contains the max positive element and dp[i].second contains the max negative element
+        
         int res = INT_MIN;
-        for(int i=0;i<nums.size();i++){
-            // cout<<dp[i].first<<" ";
-            res = max(res, dp[i].first);
-        }
+        for(int i=0;i<nums.size();i++) res = max(res, dp[i].first);
         return res;
     }
     
