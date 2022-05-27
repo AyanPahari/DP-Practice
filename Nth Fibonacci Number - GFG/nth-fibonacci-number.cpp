@@ -10,10 +10,15 @@ class Solution {
     
     int mod = 1e9 + 7;
     long long int nthFibonacci(long long int n){
-        long long dp[1001];
-        dp[0] = 0, dp[1] = 1;
-        for(int i=2;i<=n;i++) dp[i] = (dp[i - 1] % mod + dp[i - 2] % mod) % mod;
-        return dp[n];
+        long long a = 0;
+        long long b = 1;
+        long long c;
+        for(int i=2;i<=n;i++){
+            c = (a % mod + b % mod) % mod;
+            a = b;
+            b = c;
+        }
+        return c;
     }
 };
 
