@@ -6,7 +6,10 @@ public:
         if(n <= 1) return 0;
         if(dp[n] != -1) return dp[n];
         
-        for(int i=1;i<n;i++) if(n % i == 0 && solve(n - i) == 0) return dp[n] = 1; 
+        for(int i=1;i*i<n;i++){
+            if(n % i == 0 && solve(n - i) == 0) return dp[n] = 1;
+            if(n % i == 0 && i != 1 && solve(n - n / i) == 0) return dp[n] = 1;
+        } 
         return dp[n] = 0;
     }
     
