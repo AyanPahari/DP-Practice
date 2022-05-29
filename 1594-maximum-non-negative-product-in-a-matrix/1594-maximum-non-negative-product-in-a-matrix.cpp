@@ -6,6 +6,8 @@ public:
         int col = grid[0].size();
         vector<vector<pair<long long, long long>>> dp(row , vector<pair<long long, long long>> (col)); 
         
+        // here we have a pair of <most negative number, most positive number>
+        
         dp[0][0].first = dp[0][0].second = grid[0][0];
         for(int i=1;i<row;i++) dp[i][0].first = dp[i][0].second = dp[i-1][0].first * grid[i][0];
         for(int j=1;j<col;j++) dp[0][j].first = dp[0][j].second = dp[0][j-1].first * grid[0][j];
