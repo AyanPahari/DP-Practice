@@ -6,8 +6,8 @@ public:
         
         int r2 = r1 + c1 - c2; 
         if(r1 >= n || c1 >= n || r2 >= n || c2 >= n || grid[r1][c1] == -1 || grid[r2][c2] == -1) return INT_MIN;
-        if(dp[r1][c1][c2] != -1) return dp[r1][c1][c2];
         if(r1 == n - 1 && c1 == n - 1) return grid[r1][c1];
+        if(dp[r1][c1][c2] != -1) return dp[r1][c1][c2];
         
         int ans = 0;
         ans += grid[r1][c1];
