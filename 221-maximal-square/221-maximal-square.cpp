@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+    // time - O(mn)
+    // space - O(mn)
+    
     int dp[301][301];
     int solve(int i, int j, vector<vector<char>>& grid){
         if(i >= grid.size() || j >= grid[0].size() || grid[i][j] == '0') return 0;
