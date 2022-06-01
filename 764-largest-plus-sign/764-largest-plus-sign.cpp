@@ -18,12 +18,7 @@ public:
     int orderOfLargestPlusSign(int n, vector<vector<int>>& mines) {
         vector<vector<int>>grid(n, vector<int>(n, 1));
         
-        if(n == 1) return 0;
-        if(n == 2 && mines.size() != 4) return 1;
-        if(n == 2 && mines.size() == 4) return 0;
-        
         for(int i=0;i<mines.size();i++) grid[mines[i][0]][mines[i][1]] = 0;
-        
         vector<vector<int>>left(n, vector<int>(n, 0));
         vector<vector<int>>right(n, vector<int>(n, 0));
         vector<vector<int>>up(n, vector<int>(n, 0));
